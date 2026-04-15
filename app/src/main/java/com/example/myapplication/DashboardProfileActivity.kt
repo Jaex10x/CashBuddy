@@ -2,6 +2,7 @@ package com.example.myapplication
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -99,6 +100,7 @@ class DashboardProfileActivity : AppCompatActivity() {
 
             Toast.makeText(this, "Profile Updated!", Toast.LENGTH_SHORT).show()
         }
+
 
     }
 }

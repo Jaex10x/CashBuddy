@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.PopupMenu
@@ -47,6 +48,27 @@ class DashboardListActivity: AppCompatActivity() {
             }
 
             popup.show()
+
+        }
+    }
+    private fun setupBottomNav() {
+        val home = findViewById<ImageButton>(R.id.btnhome)
+        val list = findViewById<ImageButton>(R.id.btnlist)
+//                val piggy = findViewById<ImageButton>(R.id.btnPiggy)
+//                val settings = findViewById<ImageButton>(R.id.btnSettings)
+
+        home.setColorFilter(Color.GRAY)
+        list.setColorFilter(Color.GREEN)
+//                piggy.setColorFilter(Color.GRAY)
+//                settings.setColorFilter(Color.GRAY)
+
+        home.setOnClickListener {
+            startActivity(Intent(this, DashboardActivity::class.java))
+            finish()
+        }
+
+        list.setOnClickListener {
+
         }
     }
 }

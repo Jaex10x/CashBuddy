@@ -135,15 +135,6 @@
                     android:textColor="@color/white"
                     android:textColorHint="#888888" />
 
-                <TextView
-                    android:id="@+id/lblEmail"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Email Address"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
-
-
                 <Button
                     android:id="@+id/btnSaveProfile"
                     android:layout_width="match_parent"
@@ -166,13 +157,16 @@
         android:orientation="horizontal">
 
         <ImageButton
+            android:id="@+id/btnhome"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/home_17dp_e3e3e3_fill0_wght400_grad0_opsz20"
             app:tint="#888888" />
+
         <ImageButton
+            android:id="@+id/btnlist"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

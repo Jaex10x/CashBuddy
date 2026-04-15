@@ -2,6 +2,7 @@ package com.example.myapplication
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.PopupMenu
@@ -60,6 +61,25 @@ class DashboardActivity: AppCompatActivity() {
 
             popup.show()
         }
+    }
+    private fun setupBottomNav() {
+        val home = findViewById<ImageButton>(R.id.btnhome)
+        val list = findViewById<ImageButton>(R.id.btnlist)
+//            val piggy = findViewById<ImageButton>(R.id.btnPiggy)
+//            val settings = findViewById<ImageButton>(R.id.btnSettings)
 
+
+        home.setColorFilter(Color.GREEN)
+        list.setColorFilter(Color.GRAY)
+        //piggy.setColorFilter(Color.GRAY)
+        //settings.setColorFilter(Color.GRAY)
+
+        home.setOnClickListener {
+            // already here
+        }
+
+        list.setOnClickListener {
+            startActivity(Intent(this, DashboardListActivity::class.java))
+        }
     }
 }
