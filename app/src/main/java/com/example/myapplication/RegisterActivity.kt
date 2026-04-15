@@ -14,6 +14,13 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.registration_activity)
 
+        val sharedPref = getSharedPreferences("MyPrefs", MODE_PRIVATE)
+
+        if (sharedPref.getBoolean("isRegister", false)) {
+            startActivity(Intent(this, DashboardActivity::class.java))
+            finish()
+        }
+
         val backbutton = findViewById<ImageView>(R.id.backbutton)
         val btnEnterName = findViewById<EditText>(R.id.btnEnterName)
         val btnRegCreateNewProfile = findViewById<Button>(R.id.btnRegCreateNewProfile)
@@ -22,10 +29,23 @@ class RegisterActivity : AppCompatActivity() {
             finish()
         }
         btnRegCreateNewProfile.setOnClickListener {
-            val etEmail = btnEnterName.text.toString()
-            val intent = Intent(this,DashboardActivity::class.java )
-            intent.putExtra("USERNAME", etEmail)
-            startActivity(intent)
+            val username = btnEnterName.text.toString()
+
+            if (username.isNotEmpty()) {
+
+                sharedPref.edit()
+                    .putString("username", username)
+                    .putBoolean("isRegister", true)
+                    .apply()
+
+                val intent = Intent(this, DashboardActivity::class.java)
+                startActivity(intent)
+                finish()
+
+            } else {
+                if (username.isEmpty()) btnEnterName.error = "Enter username"
+            }
+
         }
     }
 }

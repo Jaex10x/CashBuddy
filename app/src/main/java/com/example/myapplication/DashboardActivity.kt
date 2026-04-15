@@ -9,18 +9,18 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class DashboardActivity: AppCompatActivity() {
+    @SuppressLint("MissingInflatedId", "SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dashboardhome_activity)
 
+        val sharedPref = getSharedPreferences("MyPrefs", MODE_PRIVATE)
+        val username = sharedPref.getString("username", "Guest")
 
-
-        val userEnteredEmail = intent.getStringExtra("USERNAME") ?:"Guest"
         val userDisplay = findViewById<TextView>(R.id.tvuserDisplay)
+        userDisplay.text = "Welcome, $username"
+        println("Welcome $username")
 
-        println("Welcome $userEnteredEmail")
-
-        userDisplay.text = "Welcome, $userEnteredEmail"
 
         val btnMenu = findViewById<ImageButton>(R.id.btnMenu)
 
@@ -31,6 +31,7 @@ class DashboardActivity: AppCompatActivity() {
             popup.menu.add(0, 3, 2, "Personal Details")
             popup.menu.add(0, 4, 3, "Piggy Bank")
             popup.menu.add(0, 5, 4, "Settings")
+            popup.menu.add(0, 6, 5, "Log out")
 
             val onMenuItemClickListener = popup.setOnMenuItemClickListener { item ->
                 when (item.itemId) {
@@ -46,6 +47,13 @@ class DashboardActivity: AppCompatActivity() {
                     }
                     4 -> {}
                     5 -> {}
+                    6 -> {
+                        sharedPref.edit().putBoolean("isLoggedIn", false).apply()
+
+                        val intent = Intent(this@DashboardActivity, MainActivity::class.java)
+                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        startActivity(intent)
+                    }
                 }
                 true
             }

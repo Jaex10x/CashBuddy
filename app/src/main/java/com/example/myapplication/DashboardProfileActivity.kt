@@ -2,10 +2,13 @@ package com.example.myapplication
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.media.Image
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.PopupMenu
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class DashboardProfileActivity : AppCompatActivity() {
@@ -14,6 +17,18 @@ class DashboardProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dashboardprofile_activity)
+        val sharedPref = getSharedPreferences("MyPrefs", MODE_PRIVATE)
+        val etFirstName = findViewById<EditText>(R.id.etFirstName)
+        val etLastName = findViewById<EditText>(R.id.etLastName)
+        val etContact = findViewById<EditText>(R.id.etContact)
+        val btnSaveProfile = findViewById<Button>(R.id.btnSaveProfile)
+        val tvProfileTitle = findViewById<TextView>(R.id.tvProfileTitle)
+        val firstName = sharedPref.getString("firstName", "")
+        val lastName = sharedPref.getString("lastName", "")
+        etFirstName.setText(sharedPref.getString("firstName", ""))
+        etLastName.setText(sharedPref.getString("lastName", ""))
+        etContact.setText(sharedPref.getString("contact", ""))
+        tvProfileTitle.text = "$firstName $lastName"
 
         val btnMenu2 = findViewById<ImageButton>(R.id.btnMenu2)
         btnMenu2.setOnClickListener { view ->
@@ -23,6 +38,7 @@ class DashboardProfileActivity : AppCompatActivity() {
             popup.menu.add(0, 3, 2, "Personal Details")
             popup.menu.add(0, 4, 3, "Piggy Bank")
             popup.menu.add(0, 5, 4, "Settings")
+            popup.menu.add(0, 6, 5, "log out")
 
             val onMenuItemClickListener = popup.setOnMenuItemClickListener { item ->
                 when (item.itemId) {
@@ -44,13 +60,45 @@ class DashboardProfileActivity : AppCompatActivity() {
                     }
                     4 -> {}
                     5 -> {}
+                    6 -> {
+                        sharedPref.edit().putBoolean("isLoggedIn", false).apply()
+
+                        val intent = Intent(this, MainActivity::class.java)
+                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        startActivity(intent)
+                    }
                 }
                 true
             }
 
             popup.show()
         }
+        btnSaveProfile.setOnClickListener {
 
+            sharedPref.edit()
+                .putString("firstName", etFirstName.text.toString())
+                .putString("lastName", etLastName.text.toString())
+                .putString("contact", etContact.text.toString())
+                .apply()
+
+            Toast.makeText(this, "Profile Updated!", Toast.LENGTH_SHORT).show()
+        }
+        btnSaveProfile.setOnClickListener {
+
+            val firstName = etFirstName.text.toString()
+            val lastName = etLastName.text.toString()
+
+            sharedPref.edit()
+                .putString("firstName", firstName)
+                .putString("lastName", lastName)
+                .putString("contact", etContact.text.toString())
+
+                .apply()
+
+            tvProfileTitle.text = "$firstName $lastName"
+
+            Toast.makeText(this, "Profile Updated!", Toast.LENGTH_SHORT).show()
+        }
 
     }
 }

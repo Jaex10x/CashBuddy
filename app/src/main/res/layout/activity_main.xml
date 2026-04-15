@@ -115,6 +115,7 @@
         android:layout_marginTop="32dp"
         android:background="#22B14C"
         android:text="Login"
+        android:gravity="center"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
