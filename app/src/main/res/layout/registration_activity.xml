@@ -58,48 +58,53 @@
         android:textColor="@color/white" 
         android:layout_marginTop="20dp"
         android:textSize="15dp"/>
-    
+
+
     <EditText
         android:id="@+id/btnEnterName"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@drawable/bg_input_field"
         android:layout_below="@id/txtRegistrationName"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="0dp"
         android:layout_marginRight="20dp"
+        android:background="@drawable/bg_input_field"
         android:hint="Enter you Name"
-        android:textColorHint="#888888"
         android:padding="10dp"
-        android:textSize="15dp"/>
+        android:textColorHint="#888888"
+        android:textSize="15dp"
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/txtOr"
         android:layout_width="match_parent"
         android:layout_height="20dp"
-        android:text="Or"
+        android:text="Enter Password"
         android:textColor="@color/white"
-        android:gravity="center"
+        android:layout_marginLeft="25dp"
         android:layout_below="@id/btnEnterName"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="10dp"/>
 
     <EditText
-        android:id="@+id/btnGcash"
+        android:id="@+id/btnEnterPassword"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@drawable/bg_input_field"
-        android:text="Connect to Gcash"
-        android:textColor="@color/white"
-        android:gravity="center"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
         android:layout_below="@id/txtOr"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/bg_input_field"
+        android:hint="Enter your Password"
+        android:textColor="@color/white"
+        android:textColorHint="#888888"
+        android:textSize="15dp"
+        android:padding="10dp"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/btnGcash"
-        android:layout_marginTop="50dp">
+        android:layout_below="@id/btnEnterPassword"
+        android:layout_marginTop="52dp">
 
         <LinearLayout
             android:id="@+id/lineartxt"
@@ -113,16 +118,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Don't have an account? "
-                android:textColor="#FFFFFF"/>
+                android:textColor="#FFFFFF" />
 
             <TextView
                 android:id="@+id/tvRegister"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/txtDoYouHaveAccount"
                 android:text="Register"
                 android:textColor="#4CAF50"
-                android:textStyle="bold"
-                android:layout_toEndOf="@id/txtDoYouHaveAccount"/>
+                android:textStyle="bold" />
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
@@ -130,17 +135,16 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_below="@id/lineartxt"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/bg_logo_box"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
+            android:background="@drawable/bg_logo_box"
+            android:gravity="center"
             android:text="Create New Profile"
-            android:textStyle="bold"
             android:textColor="@color/white"
-            android:gravity="center"/>
+            android:textStyle="bold" />
 
     </RelativeLayout>
-
 
 
 </RelativeLayout>
