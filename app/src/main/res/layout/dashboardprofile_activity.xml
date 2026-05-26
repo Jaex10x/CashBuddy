@@ -148,63 +148,81 @@
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/bottomNav"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/bottomNavigationCard"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="#222222"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:layout_height="72dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        app:cardBackgroundColor="#22262D"
+        app:cardCornerRadius="22dp"
+        app:strokeColor="#2A303A"
+        app:strokeWidth="1dp"
+        app:cardElevation="12dp"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <ImageButton
-            android:id="@+id/btnhome"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/home_17dp_e3e3e3_fill0_wght400_grad0_opsz20"
-            app:tint="#888888" />
 
-        <ImageButton
-            android:id="@+id/btnlist"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/list_17dp_e3e3e3_fill0_wght400_grad0_opsz20"
-            app:tint="#888888" />
+        <LinearLayout
+            android:id="@+id/bottomNav"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="#222222"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-        <FrameLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-            <View
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:background="@drawable/bg_logo_box" />
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_gravity="center"
-                android:src="@drawable/person"
-                app:tint="#2D2D2D" />
-        </FrameLayout>
+            <ImageButton
+                android:id="@+id/btnhome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/home_17dp_e3e3e3_fill0_wght400_grad0_opsz20"
+                app:tint="#888888" />
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/piggy"
-            app:tint="#888888" />
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/settings"
-            app:tint="#888888" />
-    </LinearLayout>
+            <ImageButton
+                android:id="@+id/btnlist"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/list_17dp_e3e3e3_fill0_wght400_grad0_opsz20"
+                app:tint="#888888" />
+
+            <FrameLayout
+                android:id="@+id/btnProfileBottom"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_logo_box" />
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/person"
+                    app:tint="#2D2D2D" />
+            </FrameLayout>
+
+            <ImageButton
+                android:id="@+id/btnPiggyBottom"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/piggy"
+                app:tint="#888888" />
+            <ImageButton
+                android:id="@+id/btnSettingsBottom"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/settings"
+                app:tint="#888888" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 </LinearLayout>

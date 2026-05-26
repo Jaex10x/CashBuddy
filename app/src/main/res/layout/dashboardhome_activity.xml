@@ -62,7 +62,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/bottomNav"
+        android:layout_above="@+id/bottomNavigationCard"
         android:layout_below="@id/topBar">
 
         <LinearLayout
@@ -86,11 +86,12 @@
                     android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/tvBalanceValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/lblBalance"
                     android:layout_marginTop="8dp"
-                    android:text="P 10000000"
+                    android:text="P 0.00"
                     android:textColor="#FFFFFF"
                     android:textSize="36sp"
                     android:textStyle="bold" />
@@ -165,128 +166,89 @@
                 android:layout_marginTop="8dp"
                 android:background="#444444" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Yesterday"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="31 March 2024"
-                android:textColor="#888888" />
-
             <LinearLayout
+                android:id="@+id/spendContainerHome"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/bg_input_field">
-
-                <View
-                    android:layout_width="10dp"
-                    android:layout_height="match_parent"
-                    android:background="#F44336" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginTop="16dp"
-                    android:orientation="vertical"
-                    android:layout_marginLeft="10dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Food &amp; Drink"
-                        android:textColor="#888888"
-                        android:textSize="11sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Siomai"
-                        android:textColor="#FFFFFF"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
-                    android:text="-P 20 000"
-                    android:textColor="#FF5252"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_marginRight="10dp"/>
-
-            </LinearLayout>
-
-
-
-
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
         </LinearLayout>
     </ScrollView>
 
-    <LinearLayout
-        android:id="@+id/bottomNav"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/bottomNavigationCard"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="72dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
         android:layout_alignParentBottom="true"
-        android:background="#222222"
-        android:gravity="center"
-        android:orientation="horizontal">
+        app:cardBackgroundColor="#22262D"
+        app:cardCornerRadius="22dp"
+        app:strokeColor="#2A303A"
+        app:strokeWidth="1dp"
+        app:cardElevation="12dp">
 
-        <ImageButton
-            android:id="@+id/btnhome"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/home_17dp_e3e3e3_fill0_wght400_grad0_opsz20"
-            app:tint="#888888" />
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/list_17dp_e3e3e3_fill0_wght400_grad0_opsz20"
-            app:tint="#888888" />
 
-        <FrameLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-            <View
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:background="@drawable/bg_logo_box" />
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_gravity="center"
-                android:src="@drawable/person"
-                app:tint="#2D2D2D" />
-        </FrameLayout>
+        <LinearLayout
+            android:id="@+id/bottomNav"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="#222222"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/piggy"
-            app:tint="#888888" />
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/settings"
-            app:tint="#888888" />
-    </LinearLayout>
+            <ImageButton
+                android:id="@+id/btnhome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/home_17dp_e3e3e3_fill0_wght400_grad0_opsz20"
+                app:tint="#888888" />
+
+            <ImageButton
+                android:id="@+id/btnlist"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/list_17dp_e3e3e3_fill0_wght400_grad0_opsz20"
+                app:tint="#888888" />
+
+            <FrameLayout
+                android:id="@+id/btnProfileBottom"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_logo_box" />
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/person"
+                    app:tint="#2D2D2D" />
+            </FrameLayout>
+
+            <ImageButton
+                android:id="@+id/btnPiggyBottom"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/piggy"
+                app:tint="#888888" />
+            <ImageButton
+                android:id="@+id/btnSettingsBottom"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/settings"
+                app:tint="#888888" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 </RelativeLayout>

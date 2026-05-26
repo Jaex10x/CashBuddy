@@ -26,6 +26,8 @@
         <activity android:name=".screens.register.RegisterActivity" />
         <activity android:name=".screens.dashboardList.DashboardListActivity"/>
         <activity android:name=".screens.dashboardProfile.DashboardProfileActivity"/>
+        <activity android:name=".screens.piggy.PiggyActivity"/>
+        <activity android:name=".screens.settings.SettingsActivity"/>
     </application>
 
 </manifest>

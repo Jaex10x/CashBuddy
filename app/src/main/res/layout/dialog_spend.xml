@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <!-- Shopping Icon Header -->
+    <FrameLayout
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/bg_logo_box">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="🛍️"
+            android:textSize="24sp" />
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="4dp"
+        android:text="What did you spend on?"
+        android:textColor="#F0F4F8"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:text="Track your expenses by adding the details below"
+        android:textColor="#8A9BB0"
+        android:textSize="12sp" />
+
+    <!-- Description Field -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="14dp"
+        android:hint="What did you buy?"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        app:startIconDrawable="@android:drawable/ic_menu_edit"
+        app:startIconTint="#8A9BB0"
+        app:boxStrokeColor="#2196F3"
+        app:boxStrokeWidth="1.5dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etSpendDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#F0F4F8"
+            android:textSize="15sp"
+            android:singleLine="true"
+            android:paddingVertical="12dp"
+            android:hint="e.g. Siomai Rice, Cinnabon, Gas"
+             />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Amount Field with Currency -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Amount Spent"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        app:startIconDrawable="@android:drawable/btn_dialog"
+        app:startIconTint="#8A9BB0"
+        app:boxStrokeColor="#2196F3"
+        app:boxStrokeWidth="1.5dp"
+        app:prefixText="₱ "
+        app:prefixTextColor="#2196F3"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etSpendAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:textColor="#2196F3"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:singleLine="true"
+            android:paddingVertical="12dp"
+            android:hint="0.00"
+            android:textColorHint="#5A6A7A" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+</LinearLayout>

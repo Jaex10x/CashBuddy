@@ -7,6 +7,31 @@
 
     <style name="Theme.MyApplication" parent="Base.Theme.MyApplication" />
 
+    <!-- Dark Theme -->
+    <style name="Theme.MyApplication.Dark" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="android:windowBackground">#333333</item>
+        <item name="colorPrimary">#4CAF50</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorPrimaryContainer">#1F3A2B</item>
+        <item name="colorOnPrimaryContainer">#A3E2BB</item>
+    </style>
+
+    <!-- Light Theme -->
+    <style name="Theme.MyApplication.Light" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:windowBackground">#F5F5F5</item>
+        <item name="colorPrimary">#4CAF50</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorPrimaryContainer">#C8E6C9</item>
+        <item name="colorOnPrimaryContainer">#1B5E20</item>
+    </style>
+
+    <!-- System Default -->
+    <style name="Theme.MyApplication.System" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">#333333</item>
+        <item name="colorPrimary">#4CAF50</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+    </style>
+
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">#22B14C</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/my_logo</item>
